@@ -1,0 +1,67 @@
+// Inherits from layout
+extend layout
+doctype html
+// Then we produce a form that triggers /person once
+// the user hits Submit
+
+block content
+ 
+  +tab-list(["Intro","Player","Team","Monthlyfacts"],0)
+   +tab("Intro","active")
+        .container
+        h2 Welcome to NBA-facts
+        p
+
+        #myCarousel.carousel.slide(data-ride='carousel')
+          // Indicators
+          ol.carousel-indicators
+            li.active(data-target='#myCarousel', data-slide-to='0')
+            li(data-target='#myCarousel', data-slide-to='1')
+            li(data-target='#myCarousel', data-slide-to='2')
+          // Wrapper for slides
+          .carousel-inner
+            .item.active
+              img(src='img/slide1.jpg', alt='Los Angeles', style='width:100%;')
+            .item
+              img(src='img/slide10.jpg', alt='Chicago', style='width:100%;')
+            .item
+              img(src='img/slide4.jpg', alt='New york', style='width:100%;')
+          // Left and right controls
+          a.left.carousel-control(href='#myCarousel', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left
+            span.sr-only Previous
+          a.right.carousel-control(href='#myCarousel', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right
+            span.sr-only Next
+            
+   +tab("Monthlyfacts")
+      h2 Player Monthly facts
+      p 
+      +carousel("Carousel ID_4",[
+      {image:"img/slide9.jpg",h1:"Top ten Highest scorers of the month?",button:{caption:"Get Facts",url:"/loadMonthlyDataPage"}},
+      {image:"img/slide10.jpg",h1:"Top ten shot blockers of the month?",button:{caption:"Get facts",url:"/loadMonthlyDataPage"}},
+      {image:"img/slide3.jpg",h1:"Assists leaders of the month?",button:{caption:"Get facts",url:"/loadMonthlyDataPage"}},
+      ])  
+      
+   +tab("Player")
+    h2 Player facts
+    p 
+    +carousel("Carousel ID_4",[
+      {image:"img/slide9.jpg",h1:"highest socre in 2014?",button:{caption:"Player facts",url:"/player"}},
+      {image:"img/slide10.jpg",h1:"Number of players in country ?",button:{caption:"Player facts",url:"/player"}},
+      {image:"img/slide3.jpg",h1:"Top 10 highest assists?",button:{caption:"Player facts",url:"/player"}},
+      {image:"img/slide4.jpg",h1:"What's the Average XXX of players",button:{caption:"Player facts",url:"/player"}}
+      ])
+   +tab("Team")
+    h2 Team facts
+    p 
+    +carousel("Carousel ID_5",[
+      {image:"img/slide5.jpg",h1:"Who is coach of 'Houston Rockets'",button:{caption:"Team facts",url:"/team"}},
+      {image:"img/slide6.jpg",h1:"Which Team has highest win percent in 2014?",button:{caption:"Team facts",url:"/team"}},
+      {image:"img/slide7.jpg",h1:"Which team has highest average assists?",button:{caption:"Team facts",url:"/team"}},
+      {image:"img/slide8.jpg",h1:"Which team has most blocks",button:{caption:"Team facts",url:"/team"}}
+      ])
+    
+    
+  
+  

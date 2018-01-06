@@ -1,0 +1,27 @@
+// Jade file to specify output of a persons list
+// Inherits from layout
+extend layout
+
+
+block content
+  p
+    +icon-primary("search")
+    |  #{title}:
+  // Create a table with one row per result
+  form(method="get", action="/coach")
+  
+  p
+    
+          
+    table.table.table-hover
+      thead
+        tr
+          th Coach
+      tbody
+      - for (var inx = 0; inx < results.length; inx++)
+        tr
+          td=results[inx].Coach
+
+  // Put a click button that lets us return to the index page
+  form(method='get', action='/team')
+      button.btn.btn-default Return

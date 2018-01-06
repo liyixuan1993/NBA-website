@@ -1,0 +1,29 @@
+// Jade file to specify output of a persons list
+// Inherits from layout
+
+extend layout
+
+
+block content
+  p
+    +icon-primary("search")
+    |  #{title}:
+  // Create a table with one row per result
+  form(method="get", action="/mvp_times")
+  p
+  table.table.table-hover
+      thead
+        tr
+          th Player Name
+          th &nbsp;
+          th Season
+      tbody
+      - for (var inx = 0; inx < results.length; inx++)
+        tr
+          td=results[inx].Name
+          td &nbsp;
+          td=results[inx].Start_Year
+
+  // Put a click button that lets us return to the index page
+  form(method='get', action='/player')
+      button.btn.btn-default Return

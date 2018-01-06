@@ -1,0 +1,51 @@
+// Jade file to specify output of a persons list
+// Inherits from layout
+extend layout
+
+
+block content
+  h3 2016-2017 Player Monthly facts
+  br
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Top ten Highest scorers of the month:   
+  form(method='get', action= '/monthlyPlayerData/pts')
+   p
+    select(name = "month")
+       - for (var inx = 0; inx < months.length; inx++)
+         option #{months[inx]}
+   button.btn.btn-default Check
+  br
+  br
+  br
+
+  p
+    +icon-primary("search")
+    | &nbsp; Top ten shot blockers of the month  
+  form(method='get', action= '/monthlyPlayerData/blk')
+   p
+    select(name = "month")
+       - for (var inx = 0; inx < months.length; inx++)
+         option #{months[inx]}
+   button.btn.btn-default Check
+  br
+  br
+  br
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Assists leaders of the month 
+  form(method='get', action= '/monthlyPlayerData/ast')
+   p
+    select(name = "month")
+       - for (var inx = 0; inx < months.length; inx++)
+         option #{months[inx]}
+   button.btn.btn-default Check
+  br
+  br
+  br
+  
+  form(method='get', action= '/')
+   button.btn.btn-default Return
+  

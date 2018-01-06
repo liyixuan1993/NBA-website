@@ -1,0 +1,28 @@
+// Jade file to specify output of a persons list
+// Inherits from layout
+
+extend layout
+
+
+block content
+  p
+    +icon-primary("search")
+    |  #{title}
+  // Create a table with one row per result
+  p
+  table.table.table-hover
+      thead
+        tr
+          th Player Name
+          th &nbsp;
+          th  #{colName}
+      tbody
+      - for (var inx = 0; inx < results.length; inx++)
+        tr
+          td=results[inx].name
+          td &nbsp;
+          td=results[inx].result[mtype]
+
+  // Put a click button that lets us return to the index page
+  form(method='get', action='/loadMonthlyDataPage')
+      button.btn.btn-default return

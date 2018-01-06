@@ -1,0 +1,27 @@
+extends ../node_modules/jade-bootstrap/_bootstrap
+append styles
+    // Custom styles for this template
+    link(href='../css/navbar-static-top.css', rel='stylesheet')
+block body
+    header
+     
+    .container
+      
+        // Main component for a primary marketing message or call to action
+        .jumbotron
+          
+            .main-content
+                div(align='right') 
+                  a.btn.btn-primary.btn-md(href='/', align='right')
+                   span.glyphicon.glyphicon-home
+                   |  Home
+                block content
+            .sidebar
+                block sidebar
+    footer.footer
+            h4(align='center') Penn@gmail.com   
+               +icon("envelope")
+            h4(align='center')  Penn Inc.   
+               +icon("copyright-mark") 
+          
+          

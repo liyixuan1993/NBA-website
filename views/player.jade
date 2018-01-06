@@ -1,0 +1,171 @@
+// Jade file to specify output of a persons list
+// Inherits from layout
+extend layout
+
+
+block content
+  h3 Player facts
+  br
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Player Information:   
+  form(method='get', action= '/person')
+    input(name='name', value='', class="form-control", placeholder="player name" style="width:300px")
+    br
+    button.btn.btn-default Check
+    
+  br
+  br
+  br
+  
+
+  
+  p
+    +icon-primary("search")
+    | &nbsp; MVP in season:   
+  form(method='get', action= '/mvp_season')
+    input(name='name', value='', class="form-control", placeholder="season" style="width:300px")
+    br
+    button.btn.btn-default Check
+    
+  br
+  br
+  br
+  
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Number of players in the country:   
+    
+  form(method='get', action= '/country')
+    input(name='name', value='',class="form-control", placeholder="Country" style="width:300px")
+    br
+    button.btn.btn-default Check
+  
+  br
+  br
+  br
+  
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Top 10 players with highest points in season:
+
+  form(method='get', action='/pts')
+    input(name='name', value='', class="form-control", placeholder="season" style="width:300px") 
+    br
+    button.btn.btn-default Check
+  
+  
+  br
+  br
+  br
+  
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Top 10 players with highest average assists in season:
+
+  form(method='get', action='/assists')
+    input(name='name', value='', class="form-control", placeholder="season" style="width:300px") 
+    br
+    button.btn.btn-default Check
+  
+  
+  br
+  br
+  br
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Top 10 players with highest average steal in season:
+
+  form(method='get', action='/stl')
+    input(name='name', value='', class="form-control", placeholder="season" style="width:300px") 
+    br
+    button.btn.btn-default Check
+  
+  
+  br
+  br
+  br
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Top 10 players with highest three_pointer in season:
+
+  form(method='get', action='/three_pointer')
+    input(name='name', value='', class="form-control", placeholder="season" style="width:300px") 
+    br
+    button.btn.btn-default Check
+  
+  
+  br
+  br
+  br
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Top 10 players with highest REB in season:
+
+  form(method='get', action='/reb')
+    input(name='name', value='', class="form-control", placeholder="season" style="width:300px") 
+    br
+    button.btn.btn-default Check
+  
+  
+  br
+  br
+  br
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Player won how many times of MVP awards since 1980:   
+  form(method='get', action= '/mvp_times')
+    input(name='name', value='', class="form-control", placeholder="player name" style="width:300px")
+    br
+    button.btn.btn-default Check
+    
+  br
+  br
+  br
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Player who won most MVP awards since 1980:
+
+  form(method='get', action='/most_mvp')
+    br
+    button.btn.btn-default Check
+  br
+  br
+  br
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Highest socre of player in season:   
+  form(method='get', action= '/highest')
+    input(name='name', value='', class="form-control", placeholder="season" style="width:300px")
+    br
+    button.btn.btn-default Check
+    
+  br
+  br
+  br
+  
+  
+  p
+    +icon-primary("search")
+    | &nbsp; Average age, height, and weight for the players:
+
+  form(method='get', action='/average_wh')
+    br
+    button.btn.btn-default Check
+  br
+  br
+  br
+  form(method='get', action='/')
+    button.btn.btn-default Return
+  
+  

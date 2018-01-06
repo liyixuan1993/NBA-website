@@ -1,0 +1,36 @@
+// Jade file to specify output of a persons list
+// Inherits from layout
+extend layout
+
+block content
+  p
+    +icon-primary("search")
+    |  #{title}:
+  // Create a table with one row per result
+  br
+  br
+
+  
+  form(method="get", action="/average_wh")
+  
+    
+    table.table.table-hover
+      thead
+        tr
+           th Avg_age
+           th &nbsp;
+           th Avg_height
+           th &nbsp;
+           th Avg_weight
+      tbody
+      - for (var inx = 0; inx < results.length; inx++)
+        tr
+           td=results[inx].Avg_age
+           td &nbsp;
+           td=results[inx].Avg_height
+           td &nbsp;
+           td=results[inx].Avg_weight
+          
+  // Put a click button that lets us return to the index page
+  form(method='get', action='/player')
+    button.btn.btn-default Return
